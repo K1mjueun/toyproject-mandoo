@@ -208,14 +208,60 @@
     #pc-2 {
       width: 100vw;
       height: 100vh;
-      background:linear-gradient(rgb(205, 225, 252),rgb(224, 245, 255));
-      display: flex;
+      background-color: rgb(205, 242, 252);
+      display: none;
       position: relative;
       overflow: hidden;
     }
 
     #pc-2 > section {
       /* 하트 */
+      width: fit-content;
+      height : fit-content;
+      position: absolute;
+      color: rgb(255, 129, 129);
+      font-size: 50px;
+      /* 하트에 좀 테두리가 있으면 좋겠따 흰 테두리 */
+    }
+    
+    #pc-2 > section:nth-child(1) {
+      font-size: 70px;
+      top:8%;
+      left:23%;
+      transform: rotate(-15deg);
+    }
+    #pc-2 > section:nth-child(2) {
+      color: rgb(255, 66, 66);
+      top:20%;
+      left:18%;
+      transform: rotate(-30deg);
+    }
+    #pc-2 > section:nth-child(3) {
+      color: pink;
+      font-size: 35px;
+      top:20%;
+      left:33%;
+      transform: rotate(-5deg);
+    }
+    #pc-2 > section:nth-child(4) {
+      font-size: 75px;
+      top:27%;
+      left:10%;
+      transform: rotate(-45deg);
+    }
+    #pc-2 > section:nth-child(5) {
+      color: pink;
+      font-size: 55px;
+      top:40%;
+      left:18%;
+      transform: rotate(-35deg);
+    }
+    #pc-2 > section:nth-child(6) {
+      color: rgb(255, 66, 66);
+      font-size: 60px;
+      top:13%;
+      left:40%;
+      transform: rotate(15deg);
     }
 
     .photo {
@@ -226,18 +272,18 @@
 
       position: absolute;
       bottom: 0%;
-      left: 5%;
+      left: 10%;
     }
 
     .speech-bubble {
-      width: 850px;
-      height: 700px;
+      width: 800px;
+      height: 660px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
 
-      background-image: url('img/말풍선-2.png');
+      background-image: url('img/말풍선-점선.png');
       background-size: cover;
 
       position: absolute;
@@ -247,8 +293,20 @@
 
     .speech-bubble > h1 {
       margin: 10px;
-      font-size: 40px;
+      font-size: 35px;
       color: #333;
+    }
+
+    .snack {
+      width: 350px;
+      height: 280px;
+      background-image: url('img/개껌.png');
+      background-size: cover;
+      position: absolute;
+
+      right:35%;
+      bottom:3%;
+      transform: rotate(30deg);
     }
     
     
