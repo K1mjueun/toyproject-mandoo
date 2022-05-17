@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c0547f77dd.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; transition: .2s; font-family:  'Gamja Flower', cursive;}
+
+    /* 첫 페이지 */
+    #pc-sky {
+      width: 100vw;
+      height: 100vh;
+      background:linear-gradient(rgb(205, 242, 252),rgb(236, 250, 253));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .cloud {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cloud > div {
+      filter: blur(2px);
+      position: absolute;
+    }
+
+    .cloud > div:nth-child(1) {
+      width: 300px;
+      height: 170px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: 10%;
+      left: 5%;
+    }
+
+    .cloud > div:nth-child(2) {
+      width: 500px;
+      height: 280px;
+      background-image: url("img/toy-cloud-2.png");
+      background-size: cover;
+      filter: blur(1px);
+
+      bottom: -10%;
+      left: 30%;
+    }
+
+    .cloud > div:nth-child(3) {
+      width: 200px;
+      height: 110px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: 30%;
+      right: 5%;
+    }
+
+    .cloud > div:nth-child(4) {
+      width: 100px;
+      height: 50px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: -5%;
+      right: 30%;
+    }
+    
+    .cloud > div:nth-child(5) {
+      width: 150px;
+      height: 80px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      filter: blur(3px);
+      
+      bottom: -40%;
+      right: 35%;
+    }
+
+    .grass-1 {
+      width: 100%;
+      height: 35%;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      z-index: 3;
+
+      background-image: url("img/toy-grass-1.png");
+      background-size: cover;
+    }
+
+    .grass-2 {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+
+      background-image: url("img/toy-grass-2.png");
+      background-size: cover;
+    }
+    
+    .mandoo-1 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      z-index: 2;
+      bottom : 22%;
+      left: 20%;
+      transform: rotate(20deg);
+    }
+
+    .mandoo-2 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      top : 43%;
+      right: 12%;
+      transform: rotate(-10deg);
+    }
+
+    .mandoo-3 {
+      width: 100px;
+      height: 100px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      top : 14%;
+      left: 40%;
+      transform: rotate(5deg);
+    }
+
+    .ball {
+      width: 100px;
+      height: 100px;
+      background-image: url("img/간식볼.png");
+      background-size: cover;
+      position: absolute;
+      z-index: 4;
+      top: 35%;
+    }
+
+    .close-mandoo-1, .close-mandoo-2, .close-mandoo-3 {
+      opacity: 0;
+    }
+    
+    .close-mandoo-1 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo-close.png");
+      background-size: cover;
+      
+      position: absolute;
+      z-index: 2;
+      bottom : 22%;
+      left: 20%;
+      transform: rotate(20deg);
+    }
+    
+    .close-mandoo-2 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo-close.png");
+      background-size: cover;
+      
+      position: absolute;
+      top : 43%;
+      right: 12%;
+      transform: rotate(-10deg);
+    }
+    
+    .close-mandoo-3 {
+      width: 100px;
+      height: 100px;
+      background-image: url("img/toy-mandoo-close.png");
+      background-size: cover;
+      
+      position: absolute;
+      z-index: 1;
+      top : 14%;
+      left: 40%;
+      transform: rotate(5deg);
+    }
+
+    /* 두번째 페이지 */
+    #pc-2 {
+      width: 100vw;
+      height: 100vh;
+      background:linear-gradient(rgb(205, 225, 252),rgb(224, 245, 255));
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pc-2 > section {
+      /* 하트 */
+    }
+
+    .photo {
+      width: 700px;
+      height: 750px;
+      background-image: url("img/만두.png");
+      background-size: cover;
+
+      position: absolute;
+      bottom: 0%;
+      left: 5%;
+    }
+
+    .speech-bubble {
+      width: 850px;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      background-image: url('img/말풍선-2.png');
+      background-size: cover;
+
+      position: absolute;
+      right: 7%;
+      top: 5%;
+    }
+
+    .speech-bubble > h1 {
+      margin: 10px;
+      font-size: 40px;
+      color: #333;
+    }
+    
+    
+    /* class */
+    .on {
+      opacity: 1;
+    }
+
+    .off {
+      display: none;
+    }
+    
+    </style>
+</head>
+<body>
+  <!-- 첫 페이지 -->
+  <div id="pc-sky">
+  
+  <div class="close-mandoo-3"></div>
+  <div class="mandoo-3"></div>
+
+    <div class="cloud">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="ball"></div>
+
+    <div class="grass-1"></div>
+    
+    <div class="grass-2">
+    <div class="mandoo-1"></div>
+    <div class="close-mandoo-1"></div>
+  </div>
+  
+  <div class="mandoo-2"></div>
+  <div class="close-mandoo-2"></div>
+  </div>
+
+  <!-- 두번째 페이지 -->
+  <div id="pc-2">
+  <section><i class="fa-solid fa-heart"></i></section>
+  <section><i class="fa-solid fa-heart"></i></section>
+  <section><i class="fa-solid fa-heart"></i></section>
+  <section><i class="fa-solid fa-heart"></i></section>
+  <section><i class="fa-solid fa-heart"></i></section>
+  <section><i class="fa-solid fa-heart"></i></section>
+
+  <div class="photo"></div>
+
+  <div class="speech-bubble">
+    <h1>안녕! : )</h1>
+    <h1>나는 만두라고 해</h1>
+    <h1>아빠, 엄마, 누나와 함께 살고있는</h1>
+    <h1>8살 보스턴테리어야</h1>
+    <h1>애교많고 활발한 막둥이로</h1>
+    <h1>아주 사랑받으며 지내고 있어</h1>
+  </div>
+
+  <div class="snack"></div>
+  </div>
+
+
+  <script>
+  //첫 페이지
+  const pc1 = document.querySelector("#pc-sky");
+  const cloudBox = document.querySelector(".cloud");
+  const clouds = cloudBox.children;
+  const ball = document.querySelector('.ball');
+  const mandoo1 =  document.querySelector('.mandoo-1');
+  const mandoo2 =  document.querySelector('.mandoo-2');
+  const mandoo3 =  document.querySelector('.mandoo-3');
+  const mandooClose1 =   document.querySelector('.close-mandoo-1');
+  const mandooClose2 =   document.querySelector('.close-mandoo-2');
+  const mandooClose3 =   document.querySelector('.close-mandoo-3');
+
+  // console.log(pc1);
+  // console.log(cloudBox);
+  // console.log(clouds);
+  // console.log(ball);
+  // console.log(mandoo1);
+  // console.log(mandoo2);
+  // console.log(mandoo3);
+  // console.log(mandooClose1);
+  // console.log(mandooClose2);
+  // console.log(mandooClose3);
+
+  let Tong = [
+      {transform : 'translateY(-20px)'},
+      {transform : 'translateY(20px)'},
+      {transform : 'translateY(-20px)'},
+    ];
+    let TongTiming = {
+      duration : 1000,
+      iterations : Infinity
+    };
+    ball.animate(Tong, TongTiming);
+    // ball.style.transform = "rotate(-30deg)";
+
+    let Doongsil = [
+      {transform : "translateX(-50px)"},
+      {transform : 'translateX(50px)'},
+      {transform : 'translateX(-50px)'},
+    ];
+    let DoongsilTiming = {
+      duration : 50000,
+      interations : Infinity
+    };
+
+    for(let i =0; i<clouds.length; i++) {
+      if(i !== 1) {
+        clouds[i].animate(Doongsil, DoongsilTiming);
+      }
+    };
+
+    setInterval(function() {
+      if(mandooClose1.classList.contains('on')) {
+      mandooClose1.classList.remove('on');
+      } else {
+        mandooClose1.classList.add('on');
+      }
+    },3000);
+
+    setInterval(function() {
+      if(mandooClose2.classList.contains('on')) {
+      mandooClose2.classList.remove('on');
+      } else {
+        mandooClose2.classList.add('on');
+      }
+    },1000);
+
+    setInterval(function() {
+      if(mandooClose3.classList.contains('on')) {
+      mandooClose3.classList.remove('on');
+      } else {
+        mandooClose3.classList.add('on');
+      }
+    },2000);
+    
+    const pc2 = document.querySelector("#pc-2");
+    console.log(pc2);
+
+    ball.addEventListener('click', function() {
+    pc1.style.display = "none";
+    pc2.style.display = "flex";
+    });
+
+    //두번째 페이지
+    
+
+  </script>
+</body>
+</html>
