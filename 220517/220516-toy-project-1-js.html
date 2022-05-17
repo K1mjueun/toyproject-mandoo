@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+
+    #pc-sky {
+      width: 100vw;
+      height: 100vh;
+      background:linear-gradient(rgb(205, 242, 252),rgb(236, 250, 253));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .cloud {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cloud > div {
+      filter: blur(2px);
+      position: absolute;
+    }
+
+    .cloud > div:nth-child(1) {
+      width: 300px;
+      height: 170px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: 10%;
+      left: 5%;
+    }
+
+    .cloud > div:nth-child(2) {
+      width: 500px;
+      height: 280px;
+      background-image: url("img/toy-cloud-2.png");
+      background-size: cover;
+      filter: blur(1px);
+
+      bottom: -10%;
+      left: 30%;
+    }
+
+    .cloud > div:nth-child(3) {
+      width: 200px;
+      height: 110px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: 30%;
+      right: 5%;
+    }
+
+    .cloud > div:nth-child(4) {
+      width: 100px;
+      height: 50px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      
+      top: -5%;
+      right: 30%;
+    }
+    
+    .cloud > div:nth-child(5) {
+      width: 150px;
+      height: 80px;
+      background-image: url("img/toy-cloud.png");
+      background-size: cover;
+      filter: blur(3px);
+      
+      bottom: -40%;
+      right: 35%;
+    }
+
+    .grass-1 {
+      width: 100%;
+      height: 35%;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      z-index: 3;
+
+      background-image: url("img/toy-grass-1.png");
+      background-size: cover;
+    }
+
+    .grass-2 {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+
+      background-image: url("img/toy-grass-2.png");
+      background-size: cover;
+    }
+    
+    .mandoo-1 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      z-index: 2;
+      bottom : 22%;
+      left: 20%;
+      transform: rotate(20deg);
+    }
+
+    .mandoo-2 {
+      width: 200px;
+      height: 200px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      top : 43%;
+      right: 12%;
+      transform: rotate(-10deg);
+    }
+
+    .mandoo-3 {
+      width: 100px;
+      height: 100px;
+      background-image: url("img/toy-mandoo.png");
+      background-size: cover;
+
+      position: absolute;
+      top : 14%;
+      left: 40%;
+      transform: rotate(5deg);
+    }
+
+    .ball {
+      width: 100px;
+      height: 100px;
+      background-image: url("img/간식볼.png");
+      background-size: cover;
+      position: absolute;
+      z-index: 4;
+      top: 35%;
+    }
+
+    .on {
+      display: flex;
+    }
+
+    .close-mandoo-1 {
+      
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div id="pc-sky">
+  
+  <div class="close-mandoo-3"></div>
+  <div class="mandoo-3"></div>
+
+    <div class="cloud">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="ball"></div>
+
+    <div class="grass-1"></div>
+    
+    <div class="grass-2">
+    <div class="mandoo-1"></div>
+    <div class="close-mandoo-1"></div>
+  </div>
+  
+  <div class="mandoo-2"></div>
+  <div class="close-mandoo-2"></div>
+  </div>
+
+  <script>
+  const cloudBox = document.querySelector(".cloud");
+  const clouds = cloudBox.children;
+  const ball = document.querySelector('.ball');
+  const mandoo1 =  document.querySelector('.mandoo-1');
+  const mandoo2 =  document.querySelector('.mandoo-2');
+  const mandoo3 =  document.querySelector('.mandoo-3');
+
+  console.log(cloudBox);
+  console.log(clouds);
+  console.log(ball);
+  console.log(mandoo1);
+  console.log(mandoo2);
+  console.log(mandoo3);
+
+  let Tong = [
+      {transform : 'translateY(-50px)'},
+      {transform : 'translateY(500px)'},
+      {transform : 'translateY(-50px)'},
+    ]
+    let TongTiming = {
+      duration : 2000,
+      iterations : Infinity
+    }
+    ball.animate(Tong, TongTiming);
+    // ball.style.transform = "rotate(-30deg)";
+
+    let Doongsil = [
+      {transform : "translateX(-100px)"},
+      {transform : 'translateX(100px)'},
+      {transform : 'translateX(-100px)'},
+    ]
+    let DoongsilTiming = {
+      duration : 80000,
+      interations : Infinity
+    }
+    for(let i =0; i<clouds.length; i++) {
+      if(i !== 1) {
+        clouds[i].animate(Doongsil, DoongsilTiming);
+      }
+    }
+
+    
+
+  </script>
+</body>
+</html>
