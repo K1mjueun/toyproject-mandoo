@@ -157,7 +157,7 @@
     ];
 
     let movingTiming = {
-      duration : 1000,
+      duration : 2000,
       iterations : Infinity
     };
 
@@ -168,6 +168,10 @@
           mandooFace[i].animate(movingFace2,movingTiming);
         }
       };
+
+      ballNtext[0].addEventListener('click', ()=> {
+      page1.style.display = "none";
+      });
 
   </script>
 </body>
