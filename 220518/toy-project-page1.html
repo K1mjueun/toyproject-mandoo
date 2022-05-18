@@ -116,7 +116,6 @@
     <section></section>
     <section></section>
     <section></section>
-    <section></section>
 
   <div class="page-1">
     <div class="ball"></div>
@@ -134,7 +133,42 @@
     // console.log(page1);
     // console.log(ballNtext);
     
-    
+    let Tong = [
+      {transform : 'translateY(-15px)'},
+      {transform : 'translateY(15px)'},
+      {transform : 'translateY(-15px)'},
+    ];
+    let TongTiming = {
+      duration : 1000,
+      iterations : Infinity
+    };
+    ballNtext[0].animate(Tong, TongTiming);
+
+
+    let movingFace1 = [
+      {transform : 'rotate(5deg)'},
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(5deg)'}
+    ];
+    let movingFace2 = [
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(5deg)'},
+      {transform : 'rotate(-5deg)'}
+    ];
+
+    let movingTiming = {
+      duration : 1000,
+      iterations : Infinity
+    };
+
+      for(let i=0; i<8; i++) {
+        if(i%2 == 0) {
+          mandooFace[i].animate(movingFace1,movingTiming);
+        } else {
+          mandooFace[i].animate(movingFace2,movingTiming);
+        }
+      };
+
   </script>
 </body>
 </html>
