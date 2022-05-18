@@ -12,6 +12,7 @@
 <style>
   *{margin:0; padding:0; font-family:'Gamja Flower', cursive;}
 
+  /* 기본 배경 */
   #mandoo-back {
     width: 100vw;
     height: 100vh;
@@ -24,7 +25,7 @@
     overflow: hidden;
   }
 
-  section {
+  #mandoo-back > section {
     width: 160px;
     height: 155px;
     position: absolute;
@@ -79,6 +80,7 @@
     left: 2%;
   }
 
+  /* 페이지 1 */
   .page-1 {
     width: 85%;
     height: 80%;
@@ -101,8 +103,131 @@
   }
 
   .page-1 > h1 {
+    color : #333;
     margin-top: 7%;
   }
+
+  /* 페이지 2 */
+  .page-2 {
+    width: 85%;
+    height: 80%;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .page-2 > section {
+    position: absolute;
+    background-size: cover;
+  }
+
+  .page-2 > section:nth-child(1) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트1.png");
+
+    top:20%;
+    left: 15%;
+    transform:rotate(-25deg);
+  }
+
+  .page-2 > section:nth-child(2) {
+    width: 45px;
+    height: 40px;
+    background-image: url("img/하트2.png");
+
+    top:7%;
+    left: 30%;
+    transform:rotate(-5deg);
+  }
+
+  .page-2 > section:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트3.png");
+
+    top:10%;
+    left: 40%;
+    transform:rotate(15deg);
+  }
+
+  .page-2 > section:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트4.png");
+
+    top:40%;
+    left: 7%;
+    transform:rotate(-40deg);
+  }
+
+  .page-2 > section:nth-child(5) {
+    width: 40px;
+    height: 35px;
+    background-image: url("img/하트1.png");
+
+    top:23%;
+    left:45%;
+    transform:rotate(35deg);
+  }
+
+  .page-2 > section:nth-child(6) {
+    width: 50px;
+    height: 45px;
+    background-image: url("img/하트2.png");
+
+    top:20%;
+    left:10%;
+    transform:rotate(-25deg);
+  }
+
+  .page-2 > section:nth-child(7) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트4.png");
+
+    top:5%;
+    left:20%;
+    transform:rotate(-20deg);
+  }
+
+  .photo {
+    width: 600px;
+    height: 650px;
+    background-image: url("img/만두.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+  }
+
+  .speech-bubble {
+      width: 710px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      background-image: url('img/말풍선-점선.png');
+      background-size: cover;
+
+      position: absolute;
+      right: 9%;
+      top: 5%;
+    }
+
+    .speech-bubble > h1 {
+      margin: 10px;
+      font-size: 30px;
+      color: #333;
+    }
 
 </style>
 </head>
@@ -116,11 +241,35 @@
     <section></section>
     <section></section>
     <section></section>
+    <!-- 만두 얼굴들 -->
 
   <div class="page-1">
     <div class="ball"></div>
     <h1>만두를 만나고 싶다면 공을 Click!</h1>
   </div>
+
+  <div class="page-2">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- 하트들 -->
+
+    <div class="photo"></div>
+    <div class="speech-bubble">
+      <h1>안녕! : )</h1>
+      <h1>나는 만두라고 해</h1>
+      <h1>아빠, 엄마, 누나와 함께 살고있는</h1>
+      <h1>8살 보스턴테리어야</h1>
+      <h1>애교많고 활발한 막둥이로</h1>
+      <h1>아주 사랑받으며 지내고 있어</h1>
+    </div>
+  </div>
+
   </div>
 
   <script>
@@ -169,8 +318,11 @@
         }
       };
 
+      const page2 = document.querySelector(".page-2");
+
       ballNtext[0].addEventListener('click', ()=> {
       page1.style.display = "none";
+      page2.style.display = "flex";
       });
 
   </script>
