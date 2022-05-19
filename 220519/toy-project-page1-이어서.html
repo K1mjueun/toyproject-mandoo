@@ -79,6 +79,56 @@
     left: 2%;
   }
 
+  /* 페이지3에 추가되는 만두 얼굴들 */
+
+  #mandoo-back > section:nth-child(9) {
+    background-image: url("img/만두-기본+테두리.png");
+    bottom: 3%;
+    left: 5%;
+  }
+
+  #mandoo-back > section:nth-child(10) {
+    background-image: url("img/만두-하트눈+테두리.png");
+    bottom: 8%;
+    right: 2%;
+  }
+
+  #mandoo-back > section:nth-child(11) {
+    background-image: url("img/만두-하트눈+테두리.png");
+    bottom: 30%;
+    left: 1%;
+  }
+
+  #mandoo-back > section:nth-child(12) {
+    background-image: url("img/만두-화난+테두리.png");
+    bottom: 25%;
+    right: 1%;
+  }
+
+  #mandoo-back > section:nth-child(13) {
+    background-image: url("img/만두-반짝눈+테두리.png");
+    top: 2%;
+    left: 27%;
+  }
+
+  #mandoo-back > section:nth-child(14) {
+    background-image: url("img/만두-눈물+테두리.png");
+    top: 40%;
+    left: 0%;
+  }
+
+  #mandoo-back > section:nth-child(15) {
+    background-image: url("img/만두-윙크+테두리.png");
+    top: 25%;
+    left: -5%;
+  }
+
+  #mandoo-back > section:nth-child(16) {
+    background-image: url("img/만두-메롱+테두리.png");
+    bottom: -2%;
+    right: 20%;
+  }
+
   /* 페이지 1 */
   .page-1 {
     width: 85%;
@@ -242,7 +292,7 @@
     /* 페이지 3 */
     .page-3 {
     width: 85%;
-    height: 80%;
+    height: 450vh;
     border-radius: 30px;
     background-color: #fff;
     
@@ -258,6 +308,15 @@
 </head>
 <body>
   <div id="mandoo-back">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+
     <section></section>
     <section></section>
     <section></section>
@@ -310,6 +369,10 @@
     const mandooFace = mandooBack.children;
     const page1 = document.querySelector(".page-1");
     const ballNtext = page1.children;
+
+    for(let i =8; i<16; i++) {
+    mandooFace[i].style.display = "none";
+    };
     
     let Tong = [
       {transform : 'translateY(-15px)'},
@@ -338,7 +401,7 @@
       iterations : Infinity
     };
 
-      for(let i=0; i<8; i++) {
+      for(let i=0; i<16; i++) {
         if(i%2 === 0) {
           mandooFace[i].animate(movingFace1,movingTiming);
         } else {
@@ -375,7 +438,7 @@
         }, time);
       };
       
-      let Second = 200;
+      let Second = 300;
       Appear(heart06[0],Second);
       Appear(heart06[1],Second*2);
       Appear(heart06[2],Second*3);
@@ -419,6 +482,10 @@
     snackBone.addEventListener('click', ()=> {
       page2.style.display = "none";
       page3.style.display = "flex";
+      mandooBack.style.height = "500vh";
+        for(let i=8; i<16; i++) {
+        mandooFace[i].style.display = "flex";
+        };
       });
 
   </script>
