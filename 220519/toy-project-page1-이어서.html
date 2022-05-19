@@ -243,13 +243,14 @@
     <section></section>
     <!-- 만두 얼굴들 -->
 
+    <!-- 페이지1 -->
   <div class="page-1">
     <div class="ball"></div>
     <h1>만두를 만나고 싶다면 공을 Click!</h1>
   </div>
 
+    <!-- 페이지2 -->
   <div class="page-2">
-    <section></section>
     <section></section>
     <section></section>
     <section></section>
@@ -273,6 +274,7 @@
   </div>
 
   <script>
+    //페이지 1
     const mandooBack = document.querySelector('#mandoo-back');
     const mandooFace = mandooBack.children;
     const page1 = document.querySelector(".page-1");
@@ -311,19 +313,58 @@
     };
 
       for(let i=0; i<8; i++) {
-        if(i%2 == 0) {
+        if(i%2 === 0) {
           mandooFace[i].animate(movingFace1,movingTiming);
         } else {
           mandooFace[i].animate(movingFace2,movingTiming);
         }
       };
 
+      //페이지 2
       const page2 = document.querySelector(".page-2");
 
       ballNtext[0].addEventListener('click', ()=> {
       page1.style.display = "none";
       page2.style.display = "flex";
       });
+
+      const heart07 = page2.children;
+      const mandooPhoto = document.querySelector('.photo');
+      const speechBubble = document.querySelector('.speech-bubble');
+      const greetingText = speechBubble.children;
+      
+      function displayNone(element, elemlength) {
+        for(i=0; i<elemlength; i++) {
+        element[i].style.display = "none";
+      };
+      };
+      displayNone(heart07,heart07.length-2);
+      // for(i=0; i<heart07.length-2; i++) {
+      //   heart07[i].style.display = "none";
+      // };
+      displayNone(greetingText,greetingText.length);
+      // for(i=0; i<greetingText.length; i++) {
+      //   greetingText[i].style.display = "none";
+      // };
+      
+      function Appear (element, time) {
+        setTimeout(function() {
+        element.style.display = 'flex';
+        }, time);
+      };
+      let heartSecond = 200;
+      for(i=1, i<heart07.length-1; i++;) {
+        Appear(heart07[i],heartSecond*i);
+      };
+      // Appear(heart07[0],heartSecond);
+      // Appear(heart07[1],heartSecond*2);
+      // Appear(heart07[2],heartSecond*3);
+      // Appear(heart07[3],heartSecond*4);
+      // Appear(heart07[4],heartSecond*5);
+      // Appear(heart07[5],heartSecond*6);
+      // Appear(heart07[6],heartSecond*7);
+      // Appear(heart07[7],heartSecond*8);
+      
 
   </script>
 </body>
