@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
   <title>Document</title>
 <style>
-  *{margin:0; padding:0; font-family:'Gamja Flower', 'cursive'; transition: 1s;}
+  *{margin:0; padding:0; font-family:'Gamja Flower', 'cursive'; transition: 1s; box-sizing: border-box;}
 
   /* 기본 배경 */
   #mandoo-back {
@@ -70,7 +70,7 @@
   #mandoo-back > section:nth-child(7) {
     background-image: url("img/만두-윙크+테두리.png");
     bottom: 0%;
-    left: 35%;
+    left: 25%;
   }
 
   #mandoo-back > section:nth-child(8) {
@@ -107,7 +107,7 @@
 
   #mandoo-back > section:nth-child(13) {
     background-image: url("img/만두-반짝눈+테두리.png");
-    top: 2%;
+    top: -1%;
     left: 27%;
   }
 
@@ -292,7 +292,7 @@
     /* 페이지 3 */
     .page-3 {
     width: 85%;
-    height: 460vh;
+    height: 480vh;
     border-radius: 30px;
     background-color: #fff;
     
@@ -342,7 +342,7 @@
 
   .speech-bubble-2 > h1 {
     font-size: 30px;
-  padding-bottom: 2%;
+  padding-bottom: 2.5%;
   color: #333;
   }
 
@@ -374,8 +374,8 @@ main {
 }
 
 main > article {
-  width: 100%;
-  height: 85%;
+  width: 80%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -383,9 +383,88 @@ main > article {
 }
 
 .favorite-1, .favorite-2, .favorite-3, .favorite-4, .info-1, .info-2, .info-3,.info-4, .fav-photo-1, .fav-photo-2,.fav-photo-3,.fav-photo-4, .fav-video-1, .fav-video-2,.fav-video-3,.fav-video-4 {
-  width: 47%;
-  height: 47%;
-  border: solid red 1px;
+  width: 40%;
+  height: 48%;
+  background-size: cover;
+  margin:5px;
+  position: relative;
+}
+
+.favorite-1, .favorite-2, .favorite-3, .favorite-4 {
+  border-radius: 500px;
+}
+.favorite-1{
+  background-image: url('img/만두\ 공놀이1.jpg');
+}
+.favorite-2{
+  background-image: url('img/만두\ 개껌먹는1.jpg');
+}
+.favorite-3{
+  background-image: url('img/만두\ 산책1.jpg');
+}
+.favorite-4{
+  background-image: url('img/만두\ 일광욕.jpg');
+}
+
+.fav-photo-1 {
+  background-image: url('img/만두\ 공놀이2.jpg');
+}
+.fav-photo-2 {
+  background-image: url('img/만두\ 개껌먹는2.jpg');
+}
+.fav-photo-3 {
+  background-image: url('img/만두\ 산책2.jpg');
+}
+.fav-photo-4 {
+  background-image: url('img/만두\ 이불1.jpg');
+}
+
+.fav-video-1 {
+  background-image: url('img/만두\ 공놀이3.jpg');
+}
+.fav-video-2 {
+  background-image: url('img/만두\ 개껌먹는3.jpg');
+}
+.fav-video-3 {
+  background-image: url('img/만두\ 산책3.jpg');
+}
+.fav-video-4 {
+  background-image: url('img/만두\ 이불2.jpg');
+}
+
+.info-1, .info-2, .info-3,.info-4 {
+  background-image: url('img/메모지2.png');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-1 > p, .info-2 > p, .info-3 > p,.info-4 > p {
+  font-size: 25px;
+  color: #333;
+  font-weight: bold;
+  line-height: 150%;
+}
+
+.tape-1, .tape-2 {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  background-size: cover;
+  transform: rotate(-30deg);
+}
+
+.tape-1{
+  background-image: url('img/테이프1.png');
+  top:-5%;
+  left: -12%;
+}
+.tape-2{
+  background-image: url('img/테이프2.png');
+  bottom:-5%;
+  right:-10%;
+  opacity: .5;
 }
 
 
@@ -444,6 +523,7 @@ main > article {
 
     <!-- 페이지3 -->
   <div class="page-3">
+
     <div class="mandoo-illu-top"></div>
 
     <div class="speech-bubble-1">
@@ -455,9 +535,19 @@ main > article {
 
     <article>
       <div class="favorite-1"></div>
-      <div class="info-1"></div>
-      <div class="fav-photo-1"></div>
-      <div class="fav-video-1"></div>
+      <div class="info-1">
+        <p>내가 가장 좋아하는 건 바로 공이야!<br>
+        공놀이를 하는 걸 정말 좋아해<br>
+        아주 지쳐 힘이 다 빠질 때까지<br>절대 멈추지 않아<br>
+        그래서 가끔은 가족들이 힘들어 하는거 같아<br>
+        하지만 나는 공놀이를 멈출 수가 없어~</p>
+      </div>
+      <div class="fav-photo-1">
+        <div class="tape-1"></div>
+      </div>
+      <div class="fav-video-1">
+        <div class="tape-2"></div>
+      </div>
     </article>
   </main>
 
@@ -466,40 +556,68 @@ main > article {
 
     <article>
       <div class="favorite-2"></div>
-      <div class="info-2"></div>
-      <div class="fav-photo-2"></div>
-      <div class="fav-video-2"></div>
-    </article>
-  </main>
-
-  <main>
-    <div class="heart-3">3</div>
-
-    <article>
-      <div class="favorite-3"></div>
-      <div class="info-3"></div>
-      <div class="fav-photo-3"></div>
-      <div class="fav-video-3"></div>
-    </article>
-  </main>
-
-  <main>
-    <div class="heart-4">4</div>
-
-    <article>
-      <div class="favorite-4"></div>
-      <div class="info-4"></div>
-      <div class="fav-photo-4"></div>
-      <div class="fav-video-4"></div>
-    </article>
-  </main>
-
-  <div class="mandoo-illu-bottom"></div>
-    <div class="speech-bubble-2">
-      <h1>내 친구도 소개해줄까?</h1>
-    </div>
-    <div class="line-5"></div>
-  </div>
+      <div class="info-2">
+        <p>나는 개껌도 정말정말 좋아해!<br>
+          물고 뜯고 겉에 둘러졌던 육포를 다 먹으면<br>
+          남은 부분으로 놀아달라고 장난쳐<br>
+          질기고 끈질긴 이 개껌을 갖고 노는 것도<br>엄청 재미있거든!<br>
+          공놀이 못지않게 멈추지 못하는 놀이야</p>
+        </div>
+        <div class="fav-photo-2">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-2">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+  
+    <main>
+      <div class="heart-3">3</div>
+  
+      <article>
+        <div class="favorite-3"></div>
+        <div class="info-3">
+          <p>다음은 산책!!!! 산책을 싫어하는<br>강아지는 없을거야<br>
+            밖에 나가서 바람도 쐬고 이것저것 냄새맞고<br>
+            공놀이하고 뛰어다니면 기분이 너무 좋아<br>
+            가끔 고양이나 다른 동물들을<br>만나는 것도 재밌어<br>
+            물가에 가서 겁없이 발도 담그고,<br>산책은 항상 새롭고 신나!</p>
+        </div>
+        <div class="fav-photo-3">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-3">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+  
+    <main>
+      <div class="heart-4">4</div>
+  
+      <article>
+        <div class="favorite-4"></div>
+        <div class="info-4">
+          <p>마지막으로 소개할 건 일광욕과 이불이야~<br>
+            날씨가 좋을 때 마당에 누워서<br>일광욕을 하면 
+            따끈따끈 나른하고<br> 스트레스가 풀려<br>
+            이불 속에 쏙 들어가서<br>코만 내놓고 있는 것도 아늑하고<br>가족들 냄새가 나서 너무 좋아해!</p>
+        </div>
+        <div class="fav-photo-4">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-4">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+      
+      <div class="mandoo-illu-bottom"></div>
+      <div class="speech-bubble-2">
+        <h1>내 친구도 소개해줄까? 궁금하다면 나를 클릭해봐</h1>
+      </div>
+      </div>
 
   </div>
   <!-- ↑ 얜 만두 얼굴들 배경 -->
