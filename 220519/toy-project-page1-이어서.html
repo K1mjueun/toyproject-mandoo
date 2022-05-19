@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
   <title>Document</title>
 <style>
-  *{margin:0; padding:0; font-family:'Gamja Flower', cursive;}
+  *{margin:0; padding:0; font-family:'Gamja Flower', 'cursive'; transition: 1s;}
 
   /* 기본 배경 */
   #mandoo-back {
@@ -228,6 +228,32 @@
       color: #333;
     }
 
+    .snack-bone {
+      width: 150px;
+      height: 120px;
+      background-image: url('img/개껌.png');
+      background-size: cover;
+      position: absolute;
+
+      bottom:15%;
+      right: 25%;
+    }
+
+    /* 페이지 3 */
+    .page-3 {
+    width: 85%;
+    height: 80%;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
 </style>
 </head>
 <body>
@@ -268,20 +294,22 @@
       <h1>애교많고 활발한 막둥이로</h1>
       <h1>아주 사랑받으며 지내고 있어</h1>
     </div>
+
+    <div class="snack-bone"></div>
   </div>
 
+    <!-- 페이지3 -->
+  <div class="page-3"></div>
+
   </div>
+  <!-- ↑ 얜 만두 얼굴들 배경 -->
 
   <script>
-    //페이지 1
+    //배경 + 페이지 1
     const mandooBack = document.querySelector('#mandoo-back');
     const mandooFace = mandooBack.children;
     const page1 = document.querySelector(".page-1");
     const ballNtext = page1.children;
-    // console.log(mandooBack);
-    // console.log(mandooFace);
-    // console.log(page1);
-    // console.log(ballNtext);
     
     let Tong = [
       {transform : 'translateY(-15px)'},
@@ -293,7 +321,6 @@
       iterations : Infinity
     };
     ballNtext[0].animate(Tong, TongTiming);
-
 
     let movingFace1 = [
       {transform : 'rotate(5deg)'},
@@ -327,35 +354,72 @@
       page2.style.display = "flex";
       });
 
-      const heart07 = page2.children;
+      const heart06 = page2.children;
       const mandooPhoto = document.querySelector('.photo');
       const speechBubble = document.querySelector('.speech-bubble');
       const greetingText = speechBubble.children;
+      const snackBone = document.querySelector(".snack-bone");
       
+      snackBone.style.display = "none";
       function displayNone(element, elemlength) {
         for(i=0; i<elemlength; i++) {
         element[i].style.display = "none";
       };
       };
-      displayNone(heart07,heart07.length-2);
-      // for(i=0; i<heart07.length-2; i++) {
-      //   heart07[i].style.display = "none";
-      // };
+      displayNone(heart06,heart06.length-3);
       displayNone(greetingText,greetingText.length);
-      // for(i=0; i<greetingText.length; i++) {
-      //   greetingText[i].style.display = "none";
-      // };
       
       function Appear(element, time) {
         setTimeout(function() {
         element.style.display = 'flex';
         }, time);
       };
-      let heartSecond = 200;
-      for(i=1, i<heart07.length-1; i++;) {
-        Appear(heart07[i],heartSecond*i);
-      };
       
+      let Second = 200;
+      Appear(heart06[0],Second);
+      Appear(heart06[1],Second*2);
+      Appear(heart06[2],Second*3);
+      Appear(heart06[3],Second*4);
+      Appear(heart06[4],Second*5);
+      Appear(heart06[5],Second*6);
+      Appear(heart06[6],Second*7);
+      // for(i=1, i<heart07.length-1; i++;) {
+      //     Appear(heart07[i],Second*i);
+      //   };
+      //↑ 이 for문을 돌리면 갑자기 브라우저가 안된다
+
+      let SecondSlow = 1500;
+      Appear(greetingText[0],SecondSlow*2);
+      Appear(greetingText[1],SecondSlow*3);
+      Appear(greetingText[2],SecondSlow*4);
+      Appear(greetingText[3],SecondSlow*5);
+      Appear(greetingText[4],SecondSlow*6);
+      Appear(greetingText[5],SecondSlow*7);
+      // for(i=2, i<greetingText.length-1; i++;) {
+      //     Appear(heart07[i],SecondSlow*i);
+      //   };
+      //↑ 이 for문을 돌리면 갑자기 브라우저가 안된다
+      Appear(snackBone,SecondSlow*8);
+
+      let movingSnackBone = [
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(10deg)'},
+      {transform : 'rotate(-5deg)'}
+    ];
+
+    let snackBoneTiming = {
+      duration : 800,
+      iterations : Infinity
+    };
+    snackBone.animate(movingSnackBone, snackBoneTiming);
+
+    //페이지 3
+    const page3 = document.querySelector('.page-3');
+
+    snackBone.addEventListener('click', ()=> {
+      page2.style.display = "none";
+      page3.style.display = "flex";
+      });
 
   </script>
 </body>
