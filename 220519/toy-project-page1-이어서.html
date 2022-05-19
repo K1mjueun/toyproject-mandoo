@@ -304,6 +304,37 @@
     z-index: 1;
   }
 
+  .mandoo-illu-top, .mandoo-illu-bottom {
+    width: 160px;
+    height: 155px;
+    position: absolute;
+    background-size: cover;
+    background-image: url("img/만두-기본+테두리.png");
+  }
+
+  .mandoo-illu-top {
+    top:-2%;
+  } 
+  .mandoo-illu-bottom {
+    bottom:-2%;
+  }
+
+  .speech-bubble-1, .speech-bubble-2 {
+    width: 85%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-image: url("img/긴-말풍선-점선.png");
+  }
+  
+  .speech-bubble-1 > h1, .speech-bubble-2 > h1 {
+  font-size: 30px;
+  padding-top: 5%;
+  color: #333;
+  }
+
 </style>
 </head>
 <body>
@@ -358,7 +389,67 @@
   </div>
 
     <!-- 페이지3 -->
-  <div class="page-3"></div>
+  <div class="page-3">
+    <div class="mandoo-illu-top"></div>
+
+    <div class="speech-bubble-1">
+      <h1>내가 좋아하는 것들을 알려줄게!</h1>
+    </div>
+
+  <main>
+    <div class="line-1"></div>
+    <div class="heart-1"></div>
+
+    <article>
+      <div class="favorite-1"></div>
+      <div class="info-1"></div>
+      <div class="fav-photo-1"></div>
+      <div class="fav-video-1"></div>
+    </article>
+  </main>
+
+  <main>
+    <div class="line-2"></div>
+    <div class="heart-2"></div>
+
+    <article>
+      <div class="favorite-2"></div>
+      <div class="info-2"></div>
+      <div class="fav-photo-2"></div>
+      <div class="fav-video-2"></div>
+    </article>
+  </main>
+
+  <main>
+    <div class="line-3"></div>
+    <div class="heart-3"></div>
+
+    <article>
+      <div class="favorite-3"></div>
+      <div class="info-3"></div>
+      <div class="fav-photo-3"></div>
+      <div class="fav-video-3"></div>
+    </article>
+  </main>
+
+  <main>
+    <div class="line-4"></div>
+    <div class="heart-4"></div>
+
+    <article>
+      <div class="favorite-4"></div>
+      <div class="info-4"></div>
+      <div class="fav-photo-4"></div>
+      <div class="fav-video-4"></div>
+    </article>
+  </main>
+
+  <div class="mandoo-illu-bottom"></div>
+    <div class="speech-bubble-2">
+      <h1>내 친구도 소개해줄까?</h1>
+    </div>
+    <div class="line-5"></div>
+  </div>
 
   </div>
   <!-- ↑ 얜 만두 얼굴들 배경 -->
@@ -479,7 +570,7 @@
     //페이지 3
     const page3 = document.querySelector('.page-3');
 
-    snackBone.addEventListener('click', ()=> {
+    snackBone.addEventListener('click', function() {
       page2.style.display = "none";
       page3.style.display = "flex";
       mandooBack.style.height = "500vh";
