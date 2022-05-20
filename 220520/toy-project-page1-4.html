@@ -598,10 +598,106 @@ main > article {
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     z-index: 1;
   }
 
+  .page-5 > section {
+    position: absolute;
+    background-size: cover;
+  }
+
+  .page-5 > section:nth-child(1) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트1.png");
+
+    top:20%;
+    left: 25%;
+    transform:rotate(-25deg);
+  }
+
+  .page-5 > section:nth-child(2) {
+    width: 45px;
+    height: 40px;
+    background-image: url("img/하트2.png");
+
+    top:7%;
+    left: 50%;
+    transform:rotate(-5deg);
+  }
+
+  .page-5 > section:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트3.png");
+
+    top:10%;
+    left: 40%;
+    transform:rotate(15deg);
+  }
+
+  .page-5 > section:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트4.png");
+
+    top:40%;
+    left: 70%;
+    transform:rotate(-40deg);
+  }
+
+  .page-5 > section:nth-child(5) {
+    width: 40px;
+    height: 35px;
+    background-image: url("img/하트1.png");
+
+    top:23%;
+    left:45%;
+    transform:rotate(35deg);
+  }
+
+  .page-5 > section:nth-child(6) {
+    width: 50px;
+    height: 45px;
+    background-image: url("img/하트2.png");
+
+    top:20%;
+    left:20%;
+    transform:rotate(-25deg);
+  }
+
+  .page-5 > section:nth-child(7) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트4.png");
+
+    top:5%;
+    left:30%;
+    transform:rotate(-20deg);
+  }
+
+  .photo-2 {
+    width: 600px;
+    height: 650px;
+    background-image: url("img/만두-마지막.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0%;
+    left: 37%;
+  }
+
+  .page-5 > h1, .page-5 > h2{
+  position: absolute;
+  color : #333;
+  font-size: 30px;
+  }
+
+  .page-5 > h1 {
+  left:15%;
+  }
+  .page-5 > h2 {
+  right:15%;
+  }
 
 </style>
 </head>
@@ -870,7 +966,19 @@ main > article {
 
       <!-- 페이지 5 -->
       <div class="page-5">
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <!-- 하트들 -->
+      
+          <div class="photo-2"></div>
 
+            <h1>날 보러 와줘서 고마워!</h1>
+            <h2>다음에 또 만나 ~ :)</h2>
       </div>
 
   </div>
@@ -1018,6 +1126,12 @@ main > article {
     //페이지 5
     const page5 = document.querySelector('.page-5');
     const kongsunIllu = document.querySelector('.kongsun-illu-bottom');
+    const lastHeart06 = page5.children;
+    const goodBye1 = document.querySelector('.page-5 > h1');
+    const goodBye2 = document.querySelector('.page-5 > h2');
+    console.log(lastHeart06);
+    console.log(goodBye1);
+    console.log(goodBye2);
 
     kongsunIllu.addEventListener('click', function() {
       page4.style.display = "none";
@@ -1027,6 +1141,17 @@ main > article {
         mandooFace[i].style.display = "none";
         };
       });
+
+      Appear(lastHeart06[0],Second);
+      Appear(lastHeart06[1],Second*2);
+      Appear(lastHeart06[2],Second*3);
+      Appear(lastHeart06[3],Second*4);
+      Appear(lastHeart06[4],Second*5);
+      Appear(lastHeart06[5],Second*6);
+      Appear(lastHeart06[6],Second*7);
+
+      Appear(goodBye1,SecondSlow*2);
+      Appear(goodBye2,SecondSlow*3);
 
   </script>
 </body>
