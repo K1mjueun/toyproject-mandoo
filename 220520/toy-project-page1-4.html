@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <title>Document</title>
+<style>
+  *{margin:0; padding:0; font-family:'Gamja Flower', 'cursive'; transition: 1s; box-sizing: border-box;}
+
+  /* 기본 배경 */
+  #mandoo-back {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(209, 236, 255);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #mandoo-back > section {
+    width: 160px;
+    height: 155px;
+    position: absolute;
+    background-size: cover;
+  }
+  
+  #mandoo-back > section:nth-child(1) {
+    background-image: url("img/만두-기본+테두리.png");
+    top: 8%;
+    left: -2%;
+  }
+
+  #mandoo-back > section:nth-child(2) {
+    background-image: url("img/만두-메롱+테두리.png");
+    top: -10%;
+    left: 23%;
+  }
+
+  #mandoo-back > section:nth-child(3) {
+    background-image: url("img/만두-하트눈+테두리.png");
+    top: 15%;
+    right: 2%;
+  }
+
+  #mandoo-back > section:nth-child(4) {
+    background-image: url("img/만두-화난+테두리.png");
+    top: 1%;
+    right: 30%;
+  }
+
+  #mandoo-back > section:nth-child(5) {
+    background-image: url("img/만두-반짝눈+테두리.png");
+    top: 55%;
+    right: -3%;
+  }
+
+  #mandoo-back > section:nth-child(6) {
+    background-image: url("img/만두-눈물+테두리.png");
+    bottom: -7%;
+    right: 15%;
+  }
+
+  #mandoo-back > section:nth-child(7) {
+    background-image: url("img/만두-윙크+테두리.png");
+    bottom: 0%;
+    left: 25%;
+  }
+
+  #mandoo-back > section:nth-child(8) {
+    background-image: url("img/만두-메롱+테두리.png");
+    bottom: 15%;
+    left: 2%;
+  }
+
+  /* 페이지3에 추가되는 만두 얼굴들 */
+
+  #mandoo-back > section:nth-child(9) {
+    background-image: url("img/만두-기본+테두리.png");
+    bottom: 3%;
+    left: 5%;
+  }
+
+  #mandoo-back > section:nth-child(10) {
+    background-image: url("img/만두-하트눈+테두리.png");
+    bottom: 8%;
+    right: 2%;
+  }
+
+  #mandoo-back > section:nth-child(11) {
+    background-image: url("img/만두-하트눈+테두리.png");
+    bottom: 30%;
+    left: 1%;
+  }
+
+  #mandoo-back > section:nth-child(12) {
+    background-image: url("img/만두-화난+테두리.png");
+    bottom: 25%;
+    right: 1%;
+  }
+
+  #mandoo-back > section:nth-child(13) {
+    background-image: url("img/만두-반짝눈+테두리.png");
+    top: -1%;
+    left: 27%;
+  }
+
+  #mandoo-back > section:nth-child(14) {
+    background-image: url("img/만두-눈물+테두리.png");
+    top: 40%;
+    left: 0%;
+  }
+
+  #mandoo-back > section:nth-child(15) {
+    background-image: url("img/만두-윙크+테두리.png");
+    top: 25%;
+    left: -5%;
+  }
+
+  #mandoo-back > section:nth-child(16) {
+    background-image: url("img/만두-메롱+테두리.png");
+    bottom: -2%;
+    right: 20%;
+  }
+
+  /* 페이지 1 */
+  .page-1 {
+    width: 85%;
+    height: 80%;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .ball {
+  width: 100px;
+  height: 100px;
+  background-image: url('img/간식볼.png');
+  background-size: cover;
+  }
+
+  .page-1 > h1 {
+    color : #333;
+    margin-top: 7%;
+  }
+
+  /* 페이지 2 */
+  .page-2 {
+    width: 85%;
+    height: 80%;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .page-2 > section {
+    position: absolute;
+    background-size: cover;
+  }
+
+  .page-2 > section:nth-child(1) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트1.png");
+
+    top:20%;
+    left: 15%;
+    transform:rotate(-25deg);
+  }
+
+  .page-2 > section:nth-child(2) {
+    width: 45px;
+    height: 40px;
+    background-image: url("img/하트2.png");
+
+    top:7%;
+    left: 30%;
+    transform:rotate(-5deg);
+  }
+
+  .page-2 > section:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트3.png");
+
+    top:10%;
+    left: 40%;
+    transform:rotate(15deg);
+  }
+
+  .page-2 > section:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    background-image: url("img/하트4.png");
+
+    top:40%;
+    left: 7%;
+    transform:rotate(-40deg);
+  }
+
+  .page-2 > section:nth-child(5) {
+    width: 40px;
+    height: 35px;
+    background-image: url("img/하트1.png");
+
+    top:23%;
+    left:45%;
+    transform:rotate(35deg);
+  }
+
+  .page-2 > section:nth-child(6) {
+    width: 50px;
+    height: 45px;
+    background-image: url("img/하트2.png");
+
+    top:20%;
+    left:10%;
+    transform:rotate(-25deg);
+  }
+
+  .page-2 > section:nth-child(7) {
+    width: 65px;
+    height: 60px;
+    background-image: url("img/하트4.png");
+
+    top:5%;
+    left:20%;
+    transform:rotate(-20deg);
+  }
+
+  .photo {
+    width: 600px;
+    height: 650px;
+    background-image: url("img/만두.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+  }
+
+  .speech-bubble {
+      width: 710px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      background-image: url('img/말풍선-점선.png');
+      background-size: cover;
+
+      position: absolute;
+      right: 9%;
+      top: 5%;
+    }
+
+    .speech-bubble > h1 {
+      margin: 10px;
+      font-size: 30px;
+      color: #333;
+    }
+
+    .snack-bone {
+      width: 150px;
+      height: 120px;
+      background-image: url('img/개껌.png');
+      background-size: cover;
+      position: absolute;
+
+      bottom:15%;
+      right: 25%;
+    }
+
+    /* 페이지 3 */
+    .page-3 {
+    width: 85%;
+    height: 480vh;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .mandoo-illu-top, .mandoo-illu-bottom {
+    width: 160px;
+    height: 155px;
+    position: absolute;
+    background-size: cover;
+  }
+  
+  .mandoo-illu-top {
+    background-image: url("img/만두-기본+테두리.png");
+    top:-2%;
+  } 
+  .mandoo-illu-bottom {
+    background-image: url("img/만두-메롱+테두리.png");
+    bottom:-2%;
+  }
+
+  .speech-bubble-1, .speech-bubble-2 {
+    width: 85%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-image: url("img/긴-말풍선-점선.png");
+  }
+
+  .speech-bubble-2 {
+    background-image: url("img/긴-말풍선-점선-꼬리아래.png");
+  }
+  
+  .speech-bubble-1 > h1{
+  font-size: 30px;
+  padding-top: 5%;
+  color: #333;
+  }
+
+  .speech-bubble-2 > h1 {
+    font-size: 30px;
+  padding-bottom: 2.5%;
+  color: #333;
+  }
+
+main {
+  width: 85%;
+  height: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heart-1, .heart-2, .heart-3, .heart-4 {
+  width: 79px;
+  height: 80px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #333;
+}
+.heart-1,.heart-3 {
+  background-image: url("img/하트4.png");
+}
+.heart-2,.heart-4 {
+  background-image: url("img/하트3.png");
+}
+
+main > article {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.favorite-1, .favorite-2, .favorite-3, .favorite-4, .info-1, .info-2, .info-3,.info-4, .fav-photo-1, .fav-photo-2,.fav-photo-3,.fav-photo-4, .fav-video-1, .fav-video-2,.fav-video-3,.fav-video-4 {
+  width: 40%;
+  height: 48%;
+  background-size: cover;
+  margin:5px;
+  position: relative;
+}
+
+.favorite-1, .favorite-2, .favorite-3, .favorite-4 {
+  border-radius: 500px;
+}
+.favorite-1{
+  background-image: url('img/만두\ 공놀이1.jpg');
+}
+.favorite-2{
+  background-image: url('img/만두\ 개껌먹는1.jpg');
+}
+.favorite-3{
+  background-image: url('img/만두\ 산책1.jpg');
+}
+.favorite-4{
+  background-image: url('img/만두\ 일광욕.jpg');
+}
+
+.fav-photo-1 {
+  background-image: url('img/만두\ 공놀이2.jpg');
+}
+.fav-photo-2 {
+  background-image: url('img/만두\ 개껌먹는2.jpg');
+}
+.fav-photo-3 {
+  background-image: url('img/만두\ 산책2.jpg');
+}
+.fav-photo-4 {
+  background-image: url('img/만두\ 이불1.jpg');
+}
+
+.fav-video-1 {
+  background-image: url('img/만두\ 공놀이3.jpg');
+}
+.fav-video-2 {
+  background-image: url('img/만두\ 개껌먹는3.jpg');
+}
+.fav-video-3 {
+  background-image: url('img/만두\ 산책3.jpg');
+}
+.fav-video-4 {
+  background-image: url('img/만두\ 이불2.jpg');
+}
+
+.info-1, .info-2, .info-3,.info-4 {
+  background-image: url('img/메모지2.png');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-1 > p, .info-2 > p, .info-3 > p,.info-4 > p {
+  font-size: 25px;
+  color: #333;
+  font-weight: bold;
+  line-height: 150%;
+}
+
+.tape-1, .tape-2 {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  background-size: cover;
+  transform: rotate(-30deg);
+}
+
+.tape-1{
+  background-image: url('img/테이프1.png');
+  top:-5%;
+  left: -12%;
+}
+.tape-2{
+  background-image: url('img/테이프2.png');
+  bottom:-5%;
+  right:-10%;
+  opacity: .5;
+}
+
+/* 페이지 4 */
+.page-4 {
+    width: 85%;
+    height: 480vh;
+    border-radius: 30px;
+    background-color: #fff;
+    
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+
+
+</style>
+</head>
+<body>
+  <div id="mandoo-back">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- 만두 얼굴들 -->
+
+    <!-- 페이지1 -->
+  <div class="page-1">
+    <div class="ball"></div>
+    <h1>만두를 만나고 싶다면 공을 Click!</h1>
+  </div>
+
+    <!-- 페이지2 -->
+  <div class="page-2">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- 하트들 -->
+
+    <div class="photo"></div>
+    <div class="speech-bubble">
+      <h1>안녕! : )</h1>
+      <h1>나는 만두라고 해</h1>
+      <h1>아빠, 엄마, 누나와 함께 살고있는</h1>
+      <h1>8살 보스턴테리어야</h1>
+      <h1>애교많고 활발한 막둥이로</h1>
+      <h1>아주 사랑받으며 지내고 있어</h1>
+    </div>
+
+    <div class="snack-bone"></div>
+  </div>
+
+    <!-- 페이지3 -->
+  <div class="page-3">
+
+    <div class="mandoo-illu-top"></div>
+
+    <div class="speech-bubble-1">
+      <h1>내가 좋아하는 것들을 알려줄게!</h1>
+    </div>
+
+  <main>
+    <div class="heart-1">1</div>
+
+    <article>
+      <div class="favorite-1"></div>
+      <div class="info-1">
+        <p>내가 가장 좋아하는 건 바로 공이야!<br>
+        공놀이를 하는 걸 정말 좋아해<br>
+        아주 지쳐 힘이 다 빠질 때까지<br>절대 멈추지 않아<br>
+        그래서 가끔은 가족들이 힘들어 하는거 같아<br>
+        하지만 나는 공놀이를 멈출 수가 없어~</p>
+      </div>
+      <div class="fav-photo-1">
+        <div class="tape-1"></div>
+      </div>
+      <div class="fav-video-1">
+        <div class="tape-2"></div>
+      </div>
+    </article>
+  </main>
+
+  <main>
+    <div class="heart-2">2</div>
+
+    <article>
+      <div class="favorite-2"></div>
+      <div class="info-2">
+        <p>나는 개껌도 정말정말 좋아해!<br>
+          물고 뜯고 겉에 둘러졌던 육포를 다 먹으면<br>
+          남은 부분으로 놀아달라고 장난쳐<br>
+          질기고 끈질긴 이 개껌을 갖고 노는 것도<br>엄청 재미있거든!<br>
+          공놀이 못지않게 멈추지 못하는 놀이야</p>
+        </div>
+        <div class="fav-photo-2">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-2">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+  
+    <main>
+      <div class="heart-3">3</div>
+  
+      <article>
+        <div class="favorite-3"></div>
+        <div class="info-3">
+          <p>다음은 산책!!!! 산책을 싫어하는<br>강아지는 없을거야<br>
+            밖에 나가서 바람도 쐬고 이것저것 냄새맡고<br>
+            공놀이하고 뛰어다니면 기분이 너무 좋아<br>
+            가끔 고양이나 다른 동물들을<br>만나는 것도 재밌어<br>
+            물가에 가서 겁없이 발도 담그고,<br>산책은 항상 새롭고 신나!</p>
+        </div>
+        <div class="fav-photo-3">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-3">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+  
+    <main>
+      <div class="heart-4">4</div>
+  
+      <article>
+        <div class="favorite-4"></div>
+        <div class="info-4">
+          <p>마지막으로 소개할 건 일광욕과 이불이야~<br>
+            날씨가 좋을 때 마당에 누워서<br>일광욕을 하면 
+            따끈따끈 나른하고<br> 스트레스가 풀려<br>
+            이불 속에 쏙 들어가서<br>코만 내놓고 있는 것도 아늑하고<br>가족들 냄새가 나서 너무 좋아해!</p>
+        </div>
+        <div class="fav-photo-4">
+          <div class="tape-1"></div>
+        </div>
+        <div class="fav-video-4">
+          <div class="tape-2"></div>
+        </div>
+      </article>
+    </main>
+      
+      <div class="mandoo-illu-bottom"></div>
+      <div class="speech-bubble-2">
+        <h1>내 친구도 소개해줄까? 궁금하다면 나를 클릭해봐</h1>
+      </div>
+      </div>
+
+      <!-- 페이지 4 -->
+      <div class="page-4">
+
+        <div class="mandoo-illu-top"></div>
+    
+        <div class="speech-bubble-1">
+          <h1>내 친구였던 영리하고 사랑스러운 콩순이를 소개할게 :p</h1>
+        </div>
+    
+      <main>
+        <div class="heart-1">1</div>
+    
+        <article>
+          <div class="favorite-1"></div>
+          <div class="info-1">
+            <p>내가 가장 좋아하는 건 바로 공이야!<br>
+            공놀이를 하는 걸 정말 좋아해<br>
+            아주 지쳐 힘이 다 빠질 때까지<br>절대 멈추지 않아<br>
+            그래서 가끔은 가족들이 힘들어 하는거 같아<br>
+            하지만 나는 공놀이를 멈출 수가 없어~</p>
+          </div>
+          <div class="fav-photo-1">
+            <div class="tape-1"></div>
+          </div>
+          <div class="fav-video-1">
+            <div class="tape-2"></div>
+          </div>
+        </article>
+      </main>
+    
+      <main>
+        <div class="heart-2">2</div>
+    
+        <article>
+          <div class="favorite-2"></div>
+          <div class="info-2">
+            <p>나는 개껌도 정말정말 좋아해!<br>
+              물고 뜯고 겉에 둘러졌던 육포를 다 먹으면<br>
+              남은 부분으로 놀아달라고 장난쳐<br>
+              질기고 끈질긴 이 개껌을 갖고 노는 것도<br>엄청 재미있거든!<br>
+              공놀이 못지않게 멈추지 못하는 놀이야</p>
+            </div>
+            <div class="fav-photo-2">
+              <div class="tape-1"></div>
+            </div>
+            <div class="fav-video-2">
+              <div class="tape-2"></div>
+            </div>
+          </article>
+        </main>
+      
+        <main>
+          <div class="heart-3">3</div>
+      
+          <article>
+            <div class="favorite-3"></div>
+            <div class="info-3">
+              <p>다음은 산책!!!! 산책을 싫어하는<br>강아지는 없을거야<br>
+                밖에 나가서 바람도 쐬고 이것저것 냄새맡고<br>
+                공놀이하고 뛰어다니면 기분이 너무 좋아<br>
+                가끔 고양이나 다른 동물들을<br>만나는 것도 재밌어<br>
+                물가에 가서 겁없이 발도 담그고,<br>산책은 항상 새롭고 신나!</p>
+            </div>
+            <div class="fav-photo-3">
+              <div class="tape-1"></div>
+            </div>
+            <div class="fav-video-3">
+              <div class="tape-2"></div>
+            </div>
+          </article>
+        </main>
+      
+        <main>
+          <div class="heart-4">4</div>
+      
+          <article>
+            <div class="favorite-4"></div>
+            <div class="info-4">
+              <p>마지막으로 소개할 건 일광욕과 이불이야~<br>
+                날씨가 좋을 때 마당에 누워서<br>일광욕을 하면 
+                따끈따끈 나른하고<br> 스트레스가 풀려<br>
+                이불 속에 쏙 들어가서<br>코만 내놓고 있는 것도 아늑하고<br>가족들 냄새가 나서 너무 좋아해!</p>
+            </div>
+            <div class="fav-photo-4">
+              <div class="tape-1"></div>
+            </div>
+            <div class="fav-video-4">
+              <div class="tape-2"></div>
+            </div>
+          </article>
+        </main>
+          
+          <div class="mandoo-illu-bottom"></div>
+          <div class="speech-bubble-2">
+            <h1>이제 내 이야기를 마쳐야겠어! 콩순이를 눌러줘</h1>
+          </div>
+          </div>
+
+  </div>
+  <!-- ↑ 얜 만두 얼굴들 배경 -->
+
+  <script>
+    //배경 + 페이지 1
+    const mandooBack = document.querySelector('#mandoo-back');
+    const mandooFace = mandooBack.children;
+    const page1 = document.querySelector(".page-1");
+    const ballNtext = page1.children;
+
+    for(let i =8; i<16; i++) {
+    mandooFace[i].style.display = "none";
+    };
+    
+    let Tong = [
+      {transform : 'translateY(-15px)'},
+      {transform : 'translateY(15px)'},
+      {transform : 'translateY(-15px)'},
+    ];
+    let TongTiming = {
+      duration : 1000,
+      iterations : Infinity
+    };
+    ballNtext[0].animate(Tong, TongTiming);
+
+    let movingFace1 = [
+      {transform : 'rotate(5deg)'},
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(5deg)'}
+    ];
+    let movingFace2 = [
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(5deg)'},
+      {transform : 'rotate(-5deg)'}
+    ];
+
+    let movingTiming = {
+      duration : 2000,
+      iterations : Infinity
+    };
+
+      for(let i=0; i<16; i++) {
+        if(i%2 === 0) {
+          mandooFace[i].animate(movingFace1,movingTiming);
+        } else {
+          mandooFace[i].animate(movingFace2,movingTiming);
+        }
+      };
+
+      //페이지 2
+      const page2 = document.querySelector(".page-2");
+
+      ballNtext[0].addEventListener('click', ()=> {
+      page1.style.display = "none";
+      page2.style.display = "flex";
+      });
+
+      const heart06 = page2.children;
+      const mandooPhoto = document.querySelector('.photo');
+      const speechBubble = document.querySelector('.speech-bubble');
+      const greetingText = speechBubble.children;
+      const snackBone = document.querySelector(".snack-bone");
+      
+      snackBone.style.display = "none";
+      function displayNone(element, elemlength) {
+        for(i=0; i<elemlength; i++) {
+        element[i].style.display = "none";
+      };
+      };
+      displayNone(heart06,heart06.length-3);
+      displayNone(greetingText,greetingText.length);
+      
+      function Appear(element, time) {
+        setTimeout(function() {
+        element.style.display = 'flex';
+        }, time);
+      };
+      
+      let Second = 300;
+      Appear(heart06[0],Second);
+      Appear(heart06[1],Second*2);
+      Appear(heart06[2],Second*3);
+      Appear(heart06[3],Second*4);
+      Appear(heart06[4],Second*5);
+      Appear(heart06[5],Second*6);
+      Appear(heart06[6],Second*7);
+      // for(i=1, i<heart07.length-1; i++;) {
+      //     Appear(heart07[i],Second*i);
+      //   };
+      //↑ 이 for문을 돌리면 갑자기 브라우저가 안된다
+
+      let SecondSlow = 1500;
+      Appear(greetingText[0],SecondSlow*2);
+      Appear(greetingText[1],SecondSlow*3);
+      Appear(greetingText[2],SecondSlow*4);
+      Appear(greetingText[3],SecondSlow*5);
+      Appear(greetingText[4],SecondSlow*6);
+      Appear(greetingText[5],SecondSlow*7);
+      // for(i=2, i<greetingText.length-1; i++;) {
+      //     Appear(heart07[i],SecondSlow*i);
+      //   };
+      //↑ 이 for문을 돌리면 갑자기 브라우저가 안된다
+      Appear(snackBone,SecondSlow*8);
+
+      let movingSnackBone = [
+      {transform : 'rotate(-5deg)'},
+      {transform : 'rotate(10deg)'},
+      {transform : 'rotate(-5deg)'}
+    ];
+
+    let snackBoneTiming = {
+      duration : 800,
+      iterations : Infinity
+    };
+    snackBone.animate(movingSnackBone, snackBoneTiming);
+
+    //페이지 3
+    const page3 = document.querySelector('.page-3');
+
+    snackBone.addEventListener('click', function() {
+      page2.style.display = "none";
+      page3.style.display = "flex";
+      mandooBack.style.height = "500vh";
+        for(let i=8; i<16; i++) {
+        mandooFace[i].style.display = "flex";
+        };
+      });
+
+      //페이지 4
+    const page4 = document.querySelector('.page-4');
+    const mandooIllu = document.querySelector('.mandoo-illu-bottom');
+
+    mandooIllu.addEventListener('click', function() {
+      page3.style.display = "none";
+      page4.style.display = "flex";
+    });
+
+  </script>
+</body>
+</html>
