@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +25,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="root">
     <section></section>
@@ -33,27 +35,31 @@
   <script>
     const root = document.querySelector("#root");
     const mandoo = root.children;
-    
-    let time = 2000;
-    function Appear(element, time) {
-        setTimeout(function () {
-          element.style.display = 'flex';
-          console.log(root);
-        }, time)};
 
-        Appear(root,time);
-    
-    if(root.style.display = "flex") {
-          Appear(mandoo[0],time*2);
-          Appear(mandoo[1],time*3);
-          Appear(mandoo[2],time*4);
+    let time = 2000;
+
+    function Appear(element, time) {
+      setTimeout(function () {
+        element.style.display = 'flex';
+      }, time)
+    };
+
+    window.addEventListener('click', function () {
+      Appear(root, time);
+      console.log(root);
+
+      if (root.style.display = "flex") {
+        Appear(mandoo[0], time * 2);
+        Appear(mandoo[1], time * 3);
+        Appear(mandoo[2], time * 4);
       };
+    });
 
     // let aStep = setTimeout(function() {
     //   mandoo[0].style.display = 'flex';
     //   console.log('첫번째');
     // }, time);
-    
+
     // let bStep = setTimeout(function() {
     //   mandoo[1].style.display = 'flex';
     //   console.log('두번째');
@@ -63,11 +69,7 @@
     //   mandoo[2].style.display = 'flex';
     //   console.log('세번째');
     // }, time/4);
-
-
-
-
-
   </script>
 </body>
+
 </html>
