@@ -1143,8 +1143,9 @@
 
     //페이지 2
     const page2 = document.querySelector(".page-2");
-
+    
     let Second = 300;
+    let SecondSlow = 1500;
 
     function Appear(element, time) {
       setTimeout(function () {
@@ -1170,7 +1171,6 @@
         //   };
         //↑ 이 for문을 돌리면 갑자기 브라우저가 안된다
 
-        let SecondSlow = 1500;
         Appear(greetingText[0], SecondSlow * 2);
         Appear(greetingText[1], SecondSlow * 3);
         Appear(greetingText[2], SecondSlow * 4);
